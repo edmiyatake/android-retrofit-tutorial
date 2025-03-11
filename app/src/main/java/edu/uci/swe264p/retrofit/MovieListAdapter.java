@@ -28,7 +28,7 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.View
             super(itemView);
             title = itemView.findViewById(R.id.tvTitle);
             releaseDate = itemView.findViewById(R.id.tvReleaseDate);
-            voteAverage = itemView.findViewById(R.id.txtVote);
+            voteAverage = itemView.findViewById(R.id.tvVote);
             overview = itemView.findViewById(R.id.tvOverview);
             poster = itemView.findViewById(R.id.ivMovie);
         }
@@ -48,7 +48,8 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.View
         holder.overview.setText(movie.getOverview());
 
         // load poster using Picasso
-        String posterUrl = "https://image.tmdb.org/t/p/w500/POSTER_PATH";
+        String movieUrl = movie.getPosterPath();
+        String posterUrl = "https://image.tmdb.org/t/p/w500/" + movieUrl;
         Picasso.get().load(posterUrl).into(holder.poster);
     }
 

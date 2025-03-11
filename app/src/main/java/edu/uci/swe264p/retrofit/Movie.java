@@ -30,9 +30,7 @@ public class Movie {
         return posterPath;
     }
 
-    public String getTitle() {
-        return title;
-    }
+    public String getTitle() { return title; }
 
     public String getReleaseDate() {
         return releaseDate;
